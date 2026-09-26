@@ -1,0 +1,19 @@
+# Only backend/, frontend/ and pyproject.toml are needed in the image.
+.git
+.env
+.env.*
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+.venv
+frontend/node_modules
+frontend/dist
+frontend/coverage
+data
+reports
+logs
+core
+config
+ui
+scripts
+*.md

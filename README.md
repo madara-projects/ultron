@@ -1,251 +1,74 @@
-# Ultron — Local-First Market Intelligence
+# Ultron
 
-**Ultron is a private, local-only research platform for NIFTY 50 analysis, simulation, and decision support.**
+Ultron is a local, single-user crypto portfolio and research assistant for Giottus. The current app uses illustrative fixture data only. It is **not connected to Giottus**, and it cannot place, cancel, or withdraw orders.
 
-It ingests daily OHLCV data, computes indicators, classifies regimes, runs multi‑strategy backtests, and presents results in a modern offline UI with explainable chat and PDF reports. No real trades. No broker APIs. No cloud services.
+## Run locally
 
-```
-                      ▲  ULTRON  ▲
-   Local‑Only Research | Explainable Intelligence | Safe Simulation
-```
-
-![Local Only](https://img.shields.io/badge/Local--Only-Yes-brightgreen)
-![No Real Trading](https://img.shields.io/badge/Real%20Trading-None-red)
-![License](https://img.shields.io/badge/License-Private-lightgrey)
-
----
-
-## Why Ultron
-
-- **Local-only, privacy-first**: Runs on your machine, no cloud dependencies.
-- **Explainable analysis**: Every signal and decision includes clear reasoning.
-- **Multi-strategy intelligence**: Trend, mean‑reversion, and breakout scenarios compared side‑by‑side.
-- **Research-grade**: Signal reliability, risk suite, and parameter grid lab built-in.
-- **Operator-ready**: Cron automation, logs, health checks, and daily summary reports.
-
----
-
-## The Ultron Loop
-
-```
-Raw OHLCV → Indicators → Regime → Reasoning → Scenarios → Paper Trades → UI + PDF
-```
-
----
-
-## At a Glance
-
-| Area | What Ultron Delivers |
-| --- | --- |
-| Data | Multi-source fallback, local caching, strict validation |
-| Signals | SMA/EMA/RSI + volatility + explainable reasoning |
-| Regimes | LONG_TERM vs SHORT_TERM with confidence |
-| Research | Scenario engine + parameter grid lab |
-| Risk | Drawdown, tail risk events, liquidity score |
-| UI | Dashboard, focus mode, watchlist, chat, PDFs |
-
----
-
-## What You’ll See (UI)
-
-- **Dashboard**: Ranked tickers with regime, confidence, and hypothetical returns
-- **Focus Mode**: Deep dive on one ticker with interactive charts
-- **Watchlist**: Your short list, stored locally
-- **Explainable Chat**: Ask “Explain RELIANCE.NS” with local Ollama
-- **PDF Export**: Shareable analysis reports (local only)
-
-```
-Signals are evidence-backed. Results are reproducible. Everything is local.
-```
-
----
-
-## Architecture (Local Only)
-
-```
-          data/raw/*.csv
-                 │
-                 ▼
-          core/data_reader
-                 │
-                 ▼
-   indicators → regime → reasoning
-                 │
-                 ▼
-     scenarios / paper trading
-                 │
-                 ▼
-        UI + PDF exports
-```
-
----
-
-## Core Capabilities
-
-### Data Engine
-- Yahoo Finance (primary)
-- NSE Bhavcopy → Stooq (fallbacks)
-- Local CSV + Feather caching for fast reads
-
-### Analyst Engine
-- SMA 20/50/200, EMA 20, RSI 14, volatility
-- Market regime detection (LONG_TERM / SHORT_TERM)
-- Reasoning engine with confidence + evidence
-- Signal reliability ledger
-- Risk suite (drawdown, tail risk, liquidity score)
-
-### Simulation & Research
-- Paper trading simulator with costs + risk controls
-- Scenario engine (trend / mean‑reversion / breakout)
-- Parameter grid runner (top configurations)
-
-### UI/UX
-- Interactive dashboard + filters + watchlist
-- Focus Mode (single‑ticker deep view)
-- Explainable chat with local Ollama (Mistral)
-- Offline‑ready assets (Bootstrap, icons, fonts vendored locally)
-- PDF export per stock (reportlab)
-
-### Reporting
-- PDF exports per stock
-- Daily summary Markdown + PDF reports
-
----
-
-## Quick Start
-
-### 1) Setup
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-### 2) Update Data
-```bash
-python scripts/run_ultron.py --parallel 6
-```
-
-### 3) Run Analysis (CLI)
-```bash
-python run_ultron_analysis.py
-```
-
-### 4) Run UI
-```bash
-export ULTRON_OFFLINE_MODE=true
-python ui/app.py
-```
-Open: `http://127.0.0.1:5000`
-
----
-
-## Chat (Local LLM)
-
-Ultron can answer in natural language using local Ollama (no cloud).
+Requirements: Docker Desktop with Docker Compose.
 
 ```bash
-export OLLAMA_URL="http://127.0.0.1:11434"
-export OLLAMA_MODEL="mistral"
-python ui/app.py
+docker compose up --build
 ```
 
-Try:
-- “Explain RELIANCE.NS”
-- “Summarize risks for TCS.NS”
-- “Top picks”
-
----
-
-## Daily Summary Report
-
-Generate a daily Markdown + PDF summary:
+Open <http://127.0.0.1:8765>. Compose publishes the app on loopback only. Set `ULTRON_HOST_PORT` in `.env` to use a different host port. Stop it with:
 
 ```bash
-python scripts/generate_daily_report.py
-```
-Outputs in `reports/daily/`.
-
----
-
-## Safety Guarantees
-
-- **No real trades**
-- **No broker APIs**
-- **Read-only analysis + simulation**
-- **Local-only execution**
-
----
-
-## Screenshots (Optional)
-
-Add your own screenshots to make the README even more visual:
-
-- `reports/screenshots/dashboard.png`
-- `reports/screenshots/stock_detail.png`
-- `reports/screenshots/focus_mode.png`
-
-Then embed them here:
-
-```markdown
-![Dashboard](reports/screenshots/dashboard.png)
-![Stock Detail](reports/screenshots/stock_detail.png)
-![Focus Mode](reports/screenshots/focus_mode.png)
+docker compose down
 ```
 
----
+## Develop the frontend
 
-## Project Structure
+Run the backend in Docker, then use Vite for frontend hot reload:
 
-```
-ultron/
-├── config/
-├── core/
-│   ├── analyst.py
-│   ├── data_loader.py
-│   ├── data_reader.py
-│   ├── indicators.py
-│   ├── regime_detector.py
-│   ├── reasoning_engine.py
-│   ├── scenario_engine.py
-│   ├── signal_reliability.py
-│   ├── risk_suite.py
-│   └── research_lab.py
-├── data/
-├── reports/
-├── scripts/
-├── ui/
-│   ├── app.py
-│   ├── templates/
-│   ├── static/
-│   └── watchlist_store.py
-└── README.md
+```bash
+docker compose up -d
+cd frontend
+npm ci
+npm run dev
 ```
 
----
+Vite serves the UI at <http://127.0.0.1:5173> and proxies API requests to the backend.
 
-## Recent Additions (March 2026)
+## Verify changes
 
-- Reasoning engine with explainable evidence
-- Scenario engine (3 strategies)
-- Signal reliability ledger
-- Risk suite + tail risk alerts
-- Research parameter grid (top configs)
-- Focus mode + watchlist + chat memory
-- Daily summary reports (MD + PDF)
-- Fully offline UI assets
-- PDF export per stock
+Backend tests run in the Docker test stage:
 
----
+```bash
+docker build --target backend-test -t ultron-test .
+docker run --rm ultron-test
+```
 
-## Status
+Frontend checks:
 
-**Stable and local‑only.**
+```bash
+cd frontend
+npm test
+npm run typecheck
+npm run build
+```
 
-If you want production hardening (CI tests, stricter offline enforcement, or advanced analytics), open an issue or message the maintainer.
+The backend can also run outside Docker with Python 3.11+ after installing `backend/requirements.txt` and building the frontend with `npm run build`.
 
----
+## What the app includes
 
-## Changelog
+- **Overview:** sample portfolio value, asset allocation, market freshness, and recent activity.
+- **Assets:** balances, available/locked amounts, valuations, and unpriced-asset warnings.
+- **Markets:** sample spot pairs, prices, spreads, and stale-price indicators.
+- **Activity:** illustrative open orders and fills.
+- **Research:** recommendations are intentionally disabled until a crypto strategy is evaluated.
+- **Settings:** local display preferences and configurable fee assumptions for estimates.
 
-See `CHANGELOG.md` for a human-readable history of what changed and what was added.
+Values Ultron derives are marked as estimates. Stale or missing prices make the portfolio incomplete; missing values are never silently replaced with zero. Fees are assumptions and must be checked against Giottus's current fee schedule.
+
+## Architecture and security
+
+- `frontend/`: React, TypeScript, Vite, and Tailwind CSS.
+- `backend/`: FastAPI JSON API, portfolio calculations, and the fixture data source.
+- `Dockerfile` + `compose.yaml`: one local app, loopback-only port mapping, non-root runtime, read-only root filesystem, and dropped Linux capabilities.
+- The backend currently accepts fixture data only. No Giottus keys or credentials are used.
+- The current API is read-only. No order, cancel, or withdrawal endpoints are implemented.
+- Never expose the service to a network or put exchange secrets in frontend code. See [ROADMAP.md](ROADMAP.md) before starting the Giottus integration.
+
+## Roadmap
+
+The implementation plan, completed phase notes, open decisions, security requirements, and next steps are tracked in [ROADMAP.md](ROADMAP.md). Project changes are recorded in [CHANGELOG.md](CHANGELOG.md).

@@ -1,0 +1,426 @@
+{
+  "/api/status": {
+    "source": "fixture",
+    "generated_at": "2026-09-25T12:00:00Z",
+    "data": {
+      "source": "fixture",
+      "connected": false,
+      "message": "Showing sample data. Ultron is not connected to an exchange account.",
+      "read_only": true,
+      "live_orders": "unavailable",
+      "quote_currency": "INR",
+      "price_stale_after_seconds": 300,
+      "fees": {
+        "inr_pair_pct": "0.4",
+        "crypto_pair_pct": "0.3",
+        "gst_pct": "18",
+        "inr_pair_effective_pct": "0.472",
+        "crypto_pair_effective_pct": "0.354",
+        "reviewed_on": "2026-09-25"
+      }
+    }
+  },
+  "/api/portfolio": {
+    "source": "fixture",
+    "generated_at": "2026-09-25T12:00:00Z",
+    "data": {
+      "quote_currency": "INR",
+      "balances_as_of": "2026-09-25T11:59:55Z",
+      "total_value": "964976.38",
+      "available_quote": "48250.75",
+      "locked_value": "63322.50",
+      "change_24h_value": "7056.82",
+      "change_24h_pct": "0.74",
+      "complete": false,
+      "warnings": [
+        "XRP is valued with a price from 1h 30m ago.",
+        "ARB has no INR price, so it is not included in the total."
+      ],
+      "holdings": [
+        {
+          "asset": "BTC",
+          "free": "0.04210000",
+          "locked": "0",
+          "total": "0.04210000",
+          "status": "priced",
+          "price_symbol": "BTC/INR",
+          "price": "9480000",
+          "price_as_of": "2026-09-25T11:59:54Z",
+          "value": "399108.00",
+          "locked_value": "0.00",
+          "allocation_pct": "41.36",
+          "change_24h_pct": "1.84",
+          "change_24h_value": "7210.91"
+        },
+        {
+          "asset": "ETH",
+          "free": "0.85000000",
+          "locked": "0.15000000",
+          "total": "1.00000000",
+          "status": "priced",
+          "price_symbol": "ETH/INR",
+          "price": "342150",
+          "price_as_of": "2026-09-25T11:59:54Z",
+          "value": "342150.00",
+          "locked_value": "51322.50",
+          "allocation_pct": "35.46",
+          "change_24h_pct": "-0.92",
+          "change_24h_value": "-3177.01"
+        },
+        {
+          "asset": "SOL",
+          "free": "6.50000000",
+          "locked": "0",
+          "total": "6.50000000",
+          "status": "priced",
+          "price_symbol": "SOL/INR",
+          "price": "17850.4",
+          "price_as_of": "2026-09-25T11:59:51Z",
+          "value": "116027.60",
+          "locked_value": "0.00",
+          "allocation_pct": "12.02",
+          "change_24h_pct": "3.41",
+          "change_24h_value": "3826.07"
+        },
+        {
+          "asset": "INR",
+          "free": "48250.75",
+          "locked": "12000.00",
+          "total": "60250.75",
+          "status": "quote",
+          "price_symbol": null,
+          "price": "1",
+          "price_as_of": null,
+          "value": "60250.75",
+          "locked_value": "12000.00",
+          "allocation_pct": "6.24",
+          "change_24h_pct": null,
+          "change_24h_value": "0.00"
+        },
+        {
+          "asset": "XRP",
+          "free": "150.0",
+          "locked": "0",
+          "total": "150.0",
+          "status": "stale_price",
+          "price_symbol": "XRP/INR",
+          "price": "245.3",
+          "price_as_of": "2026-09-25T10:30:00Z",
+          "value": "36795.00",
+          "locked_value": "0.00",
+          "allocation_pct": "3.81",
+          "change_24h_pct": "-2.15",
+          "change_24h_value": "-808.47"
+        },
+        {
+          "asset": "USDT",
+          "free": "120.12",
+          "locked": "0",
+          "total": "120.12",
+          "status": "priced",
+          "price_symbol": "USDT/INR",
+          "price": "88.62",
+          "price_as_of": "2026-09-25T11:59:56Z",
+          "value": "10645.03",
+          "locked_value": "0.00",
+          "allocation_pct": "1.10",
+          "change_24h_pct": "0.05",
+          "change_24h_value": "5.32"
+        },
+        {
+          "asset": "ARB",
+          "free": "85.0",
+          "locked": "0",
+          "total": "85.0",
+          "status": "unpriced",
+          "price_symbol": null,
+          "price": null,
+          "price_as_of": null,
+          "value": null,
+          "locked_value": null,
+          "allocation_pct": null,
+          "change_24h_pct": null,
+          "change_24h_value": null
+        }
+      ]
+    }
+  },
+  "/api/markets": {
+    "source": "fixture",
+    "generated_at": "2026-09-25T12:00:00Z",
+    "data": [
+      {
+        "symbol": "BTC/INR",
+        "base": "BTC",
+        "quote": "INR",
+        "last_price": "9480000",
+        "change_24h_pct": "1.84",
+        "volume_24h_quote": "412500000",
+        "bid": "9476200",
+        "ask": "9483900",
+        "as_of": "2026-09-25T11:59:54Z",
+        "stale": false,
+        "spread_pct": "0.081"
+      },
+      {
+        "symbol": "ETH/INR",
+        "base": "ETH",
+        "quote": "INR",
+        "last_price": "342150",
+        "change_24h_pct": "-0.92",
+        "volume_24h_quote": "188000000",
+        "bid": "341980",
+        "ask": "342390",
+        "as_of": "2026-09-25T11:59:54Z",
+        "stale": false,
+        "spread_pct": "0.120"
+      },
+      {
+        "symbol": "SOL/INR",
+        "base": "SOL",
+        "quote": "INR",
+        "last_price": "17850.4",
+        "change_24h_pct": "3.41",
+        "volume_24h_quote": "52300000",
+        "bid": "17838.2",
+        "ask": "17861.9",
+        "as_of": "2026-09-25T11:59:51Z",
+        "stale": false,
+        "spread_pct": "0.133"
+      },
+      {
+        "symbol": "USDT/INR",
+        "base": "USDT",
+        "quote": "INR",
+        "last_price": "88.62",
+        "change_24h_pct": "0.05",
+        "volume_24h_quote": "96400000",
+        "bid": "88.58",
+        "ask": "88.65",
+        "as_of": "2026-09-25T11:59:56Z",
+        "stale": false,
+        "spread_pct": "0.079"
+      },
+      {
+        "symbol": "XRP/INR",
+        "base": "XRP",
+        "quote": "INR",
+        "last_price": "245.3",
+        "change_24h_pct": "-2.15",
+        "volume_24h_quote": "21000000",
+        "bid": "244.9",
+        "ask": "245.8",
+        "as_of": "2026-09-25T10:30:00Z",
+        "stale": true,
+        "spread_pct": "0.367"
+      },
+      {
+        "symbol": "DOGE/INR",
+        "base": "DOGE",
+        "quote": "INR",
+        "last_price": "21.84",
+        "change_24h_pct": "5.2",
+        "volume_24h_quote": "14500000",
+        "bid": "21.81",
+        "ask": "21.87",
+        "as_of": "2026-09-25T11:59:48Z",
+        "stale": false,
+        "spread_pct": "0.275"
+      },
+      {
+        "symbol": "ADA/INR",
+        "base": "ADA",
+        "quote": "INR",
+        "last_price": "71.25",
+        "change_24h_pct": "0.8",
+        "volume_24h_quote": "9800000",
+        "bid": "71.18",
+        "ask": "71.33",
+        "as_of": "2026-09-25T11:59:50Z",
+        "stale": false,
+        "spread_pct": "0.211"
+      },
+      {
+        "symbol": "BTC/USDT",
+        "base": "BTC",
+        "quote": "USDT",
+        "last_price": "106950",
+        "change_24h_pct": "1.79",
+        "volume_24h_quote": "8400000",
+        "bid": "106930",
+        "ask": "106975",
+        "as_of": "2026-09-25T11:59:54Z",
+        "stale": false,
+        "spread_pct": "0.042"
+      },
+      {
+        "symbol": "ETH/USDT",
+        "base": "ETH",
+        "quote": "USDT",
+        "last_price": "3860.5",
+        "change_24h_pct": "-0.95",
+        "volume_24h_quote": "3200000",
+        "bid": "3859.9",
+        "ask": "3861.2",
+        "as_of": "2026-09-25T11:59:54Z",
+        "stale": false,
+        "spread_pct": "0.034"
+      },
+      {
+        "symbol": "ARB/USDT",
+        "base": "ARB",
+        "quote": "USDT",
+        "last_price": "0.6184",
+        "change_24h_pct": "-1.2",
+        "volume_24h_quote": "1850000",
+        "bid": "0.6179",
+        "ask": "0.6191",
+        "as_of": "2026-09-25T11:59:49Z",
+        "stale": false,
+        "spread_pct": "0.194"
+      }
+    ]
+  },
+  "/api/orders/open": {
+    "source": "fixture",
+    "generated_at": "2026-09-25T12:00:00Z",
+    "data": [
+      {
+        "order_id": "ord-1001",
+        "symbol": "SOL/INR",
+        "side": "buy",
+        "order_type": "limit",
+        "price": "16000",
+        "quantity": "0.75",
+        "filled_quantity": "0",
+        "status": "open",
+        "created_at": "2026-09-25T09:00:00Z"
+      },
+      {
+        "order_id": "ord-1002",
+        "symbol": "ETH/INR",
+        "side": "sell",
+        "order_type": "limit",
+        "price": "360000",
+        "quantity": "0.15",
+        "filled_quantity": "0",
+        "status": "open",
+        "created_at": "2026-09-23T12:00:00Z"
+      }
+    ]
+  },
+  "/api/fills": {
+    "source": "fixture",
+    "generated_at": "2026-09-25T12:00:00Z",
+    "data": [
+      {
+        "fill_id": "fill-5009",
+        "order_id": "ord-0909",
+        "symbol": "USDT/INR",
+        "side": "sell",
+        "price": "88.7",
+        "quantity": "1120",
+        "fee": "468.90",
+        "fee_asset": "INR",
+        "executed_at": "2026-09-25T07:00:00Z",
+        "value": "99344.00"
+      },
+      {
+        "fill_id": "fill-5008",
+        "order_id": "ord-0908",
+        "symbol": "ETH/INR",
+        "side": "buy",
+        "price": "351200",
+        "quantity": "0.4",
+        "fee": "663.07",
+        "fee_asset": "INR",
+        "executed_at": "2026-09-24T10:00:00Z",
+        "value": "140480.00"
+      },
+      {
+        "fill_id": "fill-5007",
+        "order_id": "ord-0907",
+        "symbol": "BTC/INR",
+        "side": "buy",
+        "price": "9390000",
+        "quantity": "0.0171",
+        "fee": "757.89",
+        "fee_asset": "INR",
+        "executed_at": "2026-09-22T12:00:00Z",
+        "value": "160569.00"
+      },
+      {
+        "fill_id": "fill-5006",
+        "order_id": "ord-0906",
+        "symbol": "XRP/INR",
+        "side": "buy",
+        "price": "262.1",
+        "quantity": "150",
+        "fee": "185.57",
+        "fee_asset": "INR",
+        "executed_at": "2026-09-19T12:00:00Z",
+        "value": "39315.00"
+      },
+      {
+        "fill_id": "fill-5005",
+        "order_id": "ord-0905",
+        "symbol": "SOL/INR",
+        "side": "buy",
+        "price": "16420",
+        "quantity": "6.5",
+        "fee": "503.77",
+        "fee_asset": "INR",
+        "executed_at": "2026-09-16T12:00:00Z",
+        "value": "106730.00"
+      },
+      {
+        "fill_id": "fill-5004",
+        "order_id": "ord-0904",
+        "symbol": "ARB/USDT",
+        "side": "buy",
+        "price": "0.702",
+        "quantity": "85",
+        "fee": "0.21",
+        "fee_asset": "USDT",
+        "executed_at": "2026-09-11T12:00:00Z",
+        "value": "59.67"
+      },
+      {
+        "fill_id": "fill-5003",
+        "order_id": "ord-0903",
+        "symbol": "USDT/INR",
+        "side": "buy",
+        "price": "87.9",
+        "quantity": "1300",
+        "fee": "539.35",
+        "fee_asset": "INR",
+        "executed_at": "2026-09-10T12:00:00Z",
+        "value": "114270.00"
+      },
+      {
+        "fill_id": "fill-5002",
+        "order_id": "ord-0902",
+        "symbol": "ETH/INR",
+        "side": "buy",
+        "price": "318400",
+        "quantity": "0.6",
+        "fee": "901.71",
+        "fee_asset": "INR",
+        "executed_at": "2026-09-07T12:00:00Z",
+        "value": "191040.00"
+      },
+      {
+        "fill_id": "fill-5001",
+        "order_id": "ord-0901",
+        "symbol": "BTC/INR",
+        "side": "buy",
+        "price": "9215000",
+        "quantity": "0.025",
+        "fee": "1087.37",
+        "fee_asset": "INR",
+        "executed_at": "2026-09-05T12:00:00Z",
+        "value": "230375.00"
+      }
+    ]
+  }
+}

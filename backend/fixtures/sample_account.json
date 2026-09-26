@@ -1,0 +1,43 @@
+{
+  "_note": "Illustrative sample data for UI development and tests. Not a real account. Prices are not market quotes.",
+  "balances": {
+    "seconds_ago": 5,
+    "items": [
+      { "asset": "INR", "free": "48250.75", "locked": "12000.00" },
+      { "asset": "BTC", "free": "0.04210000", "locked": "0" },
+      { "asset": "ETH", "free": "0.85000000", "locked": "0.15000000" },
+      { "asset": "SOL", "free": "6.50000000", "locked": "0" },
+      { "asset": "USDT", "free": "120.12", "locked": "0" },
+      { "asset": "XRP", "free": "150.0", "locked": "0" },
+      { "asset": "ARB", "free": "85.0", "locked": "0" },
+      { "asset": "DOGE", "free": "0", "locked": "0" }
+    ]
+  },
+  "tickers": [
+    { "symbol": "BTC/INR", "base": "BTC", "quote": "INR", "last_price": "9480000", "change_24h_pct": "1.84", "volume_24h_quote": "412500000", "bid": "9476200", "ask": "9483900", "seconds_ago": 6 },
+    { "symbol": "ETH/INR", "base": "ETH", "quote": "INR", "last_price": "342150", "change_24h_pct": "-0.92", "volume_24h_quote": "188000000", "bid": "341980", "ask": "342390", "seconds_ago": 6 },
+    { "symbol": "SOL/INR", "base": "SOL", "quote": "INR", "last_price": "17850.4", "change_24h_pct": "3.41", "volume_24h_quote": "52300000", "bid": "17838.2", "ask": "17861.9", "seconds_ago": 9 },
+    { "symbol": "USDT/INR", "base": "USDT", "quote": "INR", "last_price": "88.62", "change_24h_pct": "0.05", "volume_24h_quote": "96400000", "bid": "88.58", "ask": "88.65", "seconds_ago": 4 },
+    { "symbol": "XRP/INR", "base": "XRP", "quote": "INR", "last_price": "245.3", "change_24h_pct": "-2.15", "volume_24h_quote": "21000000", "bid": "244.9", "ask": "245.8", "seconds_ago": 5400 },
+    { "symbol": "DOGE/INR", "base": "DOGE", "quote": "INR", "last_price": "21.84", "change_24h_pct": "5.2", "volume_24h_quote": "14500000", "bid": "21.81", "ask": "21.87", "seconds_ago": 12 },
+    { "symbol": "ADA/INR", "base": "ADA", "quote": "INR", "last_price": "71.25", "change_24h_pct": "0.8", "volume_24h_quote": "9800000", "bid": "71.18", "ask": "71.33", "seconds_ago": 10 },
+    { "symbol": "BTC/USDT", "base": "BTC", "quote": "USDT", "last_price": "106950", "change_24h_pct": "1.79", "volume_24h_quote": "8400000", "bid": "106930", "ask": "106975", "seconds_ago": 6 },
+    { "symbol": "ETH/USDT", "base": "ETH", "quote": "USDT", "last_price": "3860.5", "change_24h_pct": "-0.95", "volume_24h_quote": "3200000", "bid": "3859.9", "ask": "3861.2", "seconds_ago": 6 },
+    { "symbol": "ARB/USDT", "base": "ARB", "quote": "USDT", "last_price": "0.6184", "change_24h_pct": "-1.2", "volume_24h_quote": "1850000", "bid": "0.6179", "ask": "0.6191", "seconds_ago": 11 }
+  ],
+  "open_orders": [
+    { "order_id": "ord-1001", "symbol": "SOL/INR", "side": "buy", "order_type": "limit", "price": "16000", "quantity": "0.75", "filled_quantity": "0", "status": "open", "seconds_ago": 10800 },
+    { "order_id": "ord-1002", "symbol": "ETH/INR", "side": "sell", "order_type": "limit", "price": "360000", "quantity": "0.15", "filled_quantity": "0", "status": "open", "seconds_ago": 172800 }
+  ],
+  "fills": [
+    { "fill_id": "fill-5001", "order_id": "ord-0901", "symbol": "BTC/INR", "side": "buy", "price": "9215000", "quantity": "0.025", "fee": "1087.37", "fee_asset": "INR", "seconds_ago": 1728000 },
+    { "fill_id": "fill-5002", "order_id": "ord-0902", "symbol": "ETH/INR", "side": "buy", "price": "318400", "quantity": "0.6", "fee": "901.71", "fee_asset": "INR", "seconds_ago": 1555200 },
+    { "fill_id": "fill-5003", "order_id": "ord-0903", "symbol": "USDT/INR", "side": "buy", "price": "87.9", "quantity": "1300", "fee": "539.35", "fee_asset": "INR", "seconds_ago": 1296000 },
+    { "fill_id": "fill-5004", "order_id": "ord-0904", "symbol": "ARB/USDT", "side": "buy", "price": "0.702", "quantity": "85", "fee": "0.21", "fee_asset": "USDT", "seconds_ago": 1209600 },
+    { "fill_id": "fill-5005", "order_id": "ord-0905", "symbol": "SOL/INR", "side": "buy", "price": "16420", "quantity": "6.5", "fee": "503.77", "fee_asset": "INR", "seconds_ago": 777600 },
+    { "fill_id": "fill-5006", "order_id": "ord-0906", "symbol": "XRP/INR", "side": "buy", "price": "262.1", "quantity": "150", "fee": "185.57", "fee_asset": "INR", "seconds_ago": 518400 },
+    { "fill_id": "fill-5007", "order_id": "ord-0907", "symbol": "BTC/INR", "side": "buy", "price": "9390000", "quantity": "0.0171", "fee": "757.89", "fee_asset": "INR", "seconds_ago": 259200 },
+    { "fill_id": "fill-5008", "order_id": "ord-0908", "symbol": "ETH/INR", "side": "buy", "price": "351200", "quantity": "0.4", "fee": "663.07", "fee_asset": "INR", "seconds_ago": 93600 },
+    { "fill_id": "fill-5009", "order_id": "ord-0909", "symbol": "USDT/INR", "side": "sell", "price": "88.7", "quantity": "1120", "fee": "468.90", "fee_asset": "INR", "seconds_ago": 18000 }
+  ]
+}

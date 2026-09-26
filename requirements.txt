@@ -1,8 +1,0 @@
-pandas
-yfinance
-matplotlib
-numpy
-flask
-plotly
-reportlab
-pyarrow

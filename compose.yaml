@@ -1,0 +1,29 @@
+services:
+  ultron:
+    build:
+      context: .
+      target: runtime
+    image: ultron:local
+    ports:
+      # Loopback only. Keep the 127.0.0.1 prefix; without it Ultron is exposed to your network.
+      # Change the host port with ULTRON_HOST_PORT if 8765 is taken.
+      - "127.0.0.1:${ULTRON_HOST_PORT:-8765}:8765"
+    # Only these settings are forwarded from .env, so unrelated secrets in it
+    # (such as the legacy SMTP password) never reach the container.
+    environment:
+      ULTRON_DATA_SOURCE: ${ULTRON_DATA_SOURCE:-fixture}
+      ULTRON_QUOTE_CURRENCY: ${ULTRON_QUOTE_CURRENCY:-INR}
+      ULTRON_PRICE_STALE_AFTER_SECONDS: ${ULTRON_PRICE_STALE_AFTER_SECONDS:-300}
+      ULTRON_FEE_INR_PAIR_PCT: ${ULTRON_FEE_INR_PAIR_PCT:-0.4}
+      ULTRON_FEE_CRYPTO_PAIR_PCT: ${ULTRON_FEE_CRYPTO_PAIR_PCT:-0.3}
+      ULTRON_FEE_GST_PCT: ${ULTRON_FEE_GST_PCT:-18}
+      ULTRON_FEE_REVIEWED_ON: ${ULTRON_FEE_REVIEWED_ON:-2026-09-25}
+    # Exchange credentials (ROADMAP Phase 2) will be provided as a Docker secret
+    # at runtime, never baked into the image or passed as build arguments.
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
